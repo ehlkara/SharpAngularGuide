@@ -10,19 +10,19 @@
   font-size: 1.15rem;
 }
 
-:host.status-online p:first-of-type {
+.status-online p:first-of-type {
   color: #6a3cb0;
 }
 
-:host.status-offline p:first-of-type {
+.status-offline p:first-of-type {
   color: #b22084;
 }
 
-:host.status-unknown p:first-of-type {
+.status-unknown p:first-of-type {
   color: grey;
 }
 
-:host p:last-of-type {
+p:last-of-type {
   margin: 0;
   color: #625e67;
 }
