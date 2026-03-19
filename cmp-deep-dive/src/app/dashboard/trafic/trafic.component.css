@@ -1,15 +1,15 @@
-#traffic {
+:host {
   display: block;
   width: 15rem;
 }
 
-p {
+:host p {
   margin: 0 0 1rem 0;
   font-size: 0.9rem;
   color: #4f4b53;
 }
 
-#chart {
+:host #chart {
   height: 10rem;
   display: flex;
   align-items: flex-end;
@@ -18,7 +18,7 @@ p {
   border-bottom: 1px solid #76737a;
 }
 
-#chart div {
+:host #chart div {
   flex: 1;
   background: linear-gradient(to bottom, #36166f, #ca19a4);
   border-top-left-radius: 4px;
@@ -26,7 +26,7 @@ p {
 }
 
 @media (min-width: 768px) {
-  #traffic {
+  :host {
     width: 20rem;
   }
 }
