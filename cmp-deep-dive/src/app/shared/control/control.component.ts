@@ -1,4 +1,5 @@
 import {
+  AfterContentInit,
   Component,
   contentChild,
   ContentChild,
@@ -20,7 +21,7 @@ import {
     '(click)': 'onClick()',
   },
 })
-export class ControlComponent {
+export class ControlComponent implements AfterContentInit {
   // @HostBinding('class') className = 'control';
   // @HostListener('click', ['$event']) onClick(event: Event) {
   //   console.log(event);
@@ -38,6 +39,11 @@ export class ControlComponent {
 
   onClick() {
     console.log(this.el);
+    console.log(this.control());
+  }
+
+  ngAfterContentInit() {
+    console.log('AFTER CONTENT INIT');
     console.log(this.control());
   }
 }
