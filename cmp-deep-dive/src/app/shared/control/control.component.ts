@@ -1,5 +1,7 @@
 import {
   AfterContentInit,
+  afterNextRender,
+  afterRender,
   Component,
   contentChild,
   ContentChild,
@@ -36,6 +38,17 @@ export class ControlComponent implements AfterContentInit {
   private readonly control = contentChild<
     HTMLInputElement | HTMLTextAreaElement
   >('input');
+
+  constructor() {
+    afterRender(() => {
+      console.log('AFTER RENDER');
+      console.log(this.control());
+    });
+    afterNextRender(() => {
+      console.log('AFTER NEXT RENDER');
+      console.log(this.control());
+    });
+  }
 
   onClick() {
     console.log(this.el);
