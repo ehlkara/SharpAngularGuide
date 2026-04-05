@@ -1,5 +1,7 @@
 import {
   Component,
+  contentChild,
+  ContentChild,
   ElementRef,
   inject,
   input,
@@ -26,7 +28,16 @@ export class ControlComponent {
   label = input.required<string>();
   private el = inject(ElementRef);
 
+  // @ContentChild('input') private readonly control?: ElementRef<
+  //   HTMLInputElement | HTMLTextAreaElement
+  // >;
+
+  private readonly control = contentChild<
+    HTMLInputElement | HTMLTextAreaElement
+  >('input');
+
   onClick() {
     console.log(this.el);
+    console.log(this.control());
   }
 }
