@@ -23,4 +23,12 @@ export class TicketsComponent {
     }
     this.tickets.push(newTicket);
   }
+
+  onCloseTicket(id: string) {
+    const ticket = this.tickets.find((t) => t.id === id);
+    if (ticket) {
+      ticket.status = 'closed';
+    }
+    return ticket;
+  }
 }
