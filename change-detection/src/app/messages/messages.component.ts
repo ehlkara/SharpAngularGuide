@@ -21,6 +21,6 @@ export class MessagesComponent {
   }
 
   get messages() {
-    return this.messagesService.allMessages();
+    return this.messagesService.allMessages;
   }
 }
