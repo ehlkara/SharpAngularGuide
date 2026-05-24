@@ -2,7 +2,7 @@ import { Component, computed, inject, input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { Task, TaskStatus } from '../../task.model';
-import { TasksService } from '../../tasks.service';
+import { TaskServiceToken } from '../../../../main';
 
 @Component({
   selector: 'app-task-item',
@@ -12,7 +12,7 @@ import { TasksService } from '../../tasks.service';
   styleUrl: './task-item.component.css',
 })
 export class TaskItemComponent {
-  private readonly tasksService = inject(TasksService);
+  private readonly tasksService = inject(TaskServiceToken);
   task = input.required<Task>();
   taskStatus = computed(() => {
     switch (this.task().status) {
